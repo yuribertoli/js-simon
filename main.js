@@ -11,16 +11,15 @@ let arrayNumbers = []; //creo un'array dove inserire i numeri random
 //Inserisco casualmente 5 numeri all'aggiornarsi della pagina
 for (i=0; i<5; i++) {
 
-    let numeroCasuale = randomNumber(0, 100);
+    let numeroCasuale = randomNumber(0, 10);
 
     //verifico che il numero non sia già presente tra i numeri random creati
-    if (arrayNumbers.includes(numeroCasuale)) {
-        numeroCasuale = randomNumber(0, 100);
-    }
+    while (arrayNumbers.includes(numeroCasuale)) {
+        numeroCasuale = randomNumber(0, 10);
+    } 
 
     arrayNumbers.push(numeroCasuale);
     console.log(arrayNumbers);
-
 }
 
 //Visualizzo i numeri creati
