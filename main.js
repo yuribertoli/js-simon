@@ -18,7 +18,7 @@ for (i=0; i<5; i++) {
 }
 
 //Visualizzo i numeri creati
-box.innerHTML = arrayNumbers;
+box.innerHTML = arrayNumbers.join(' - '); //uso join per separare meglio i numeri
 
 //Inserisco il testo dentro l'h1
 testo.innerHTML = "Osserva i seguenti numeri per 30 secondi";
@@ -55,7 +55,7 @@ function domandaNumeri() {
 
         //mostro poi i risultati sullo schermo
         testo.innerHTML = `Hai indovinato ${finalResult.length} numeri`;
-        box.innerHTML = finalResult;
+        box.innerHTML = finalResult.join(' - ');
 
     }, 1000);
 
