@@ -2,8 +2,8 @@
 const testo = document.getElementById("testo");
 const box = document.getElementById("box");
 
-//Inserisco un timer per far scomparire i numeri e passare alla fase 2
-setTimeout(domandaNumeri, 3000);
+//Inserisco un timer di 3 secondi per far scomparire i numeri e passare alla fase 2
+setTimeout(domandaNumeri, 30000);
 
 //inizio gioco
 let arrayNumbers = []; //creo un'array dove inserire i numeri random
@@ -12,14 +12,20 @@ let arrayNumbers = []; //creo un'array dove inserire i numeri random
 for (i=0; i<5; i++) {
 
     let numeroCasuale = randomNumber(0, 100);
-    box.innerHTML += numeroCasuale + ` `;
     arrayNumbers.push(numeroCasuale);
     console.log(arrayNumbers);
 
 }
 
+//Visualizzo i numeri creati
+box.innerHTML = arrayNumbers;
+
 //Inserisco il testo dentro l'h1
 testo.innerHTML = "Osserva i seguenti numeri per 30 secondi";
+
+
+
+
 
 
 
@@ -41,7 +47,6 @@ function domandaNumeri() {
 
             let risposta = parseInt(prompt("Inserisci un numero"));
             answers.push(risposta);
-            console.log(answers);
         }
 
         //Controllo se i numeri inseriti corrispondono ai numeri random
@@ -56,23 +61,15 @@ function domandaNumeri() {
 
 }
 
-
-
-
-
 //Funzione per trovare coincidenze tra 2 array
 function trovaMatch(array1, array2) {
 
     let matches = [];
-
     for (let i=0; i<array1.length; i++) {
-
         for (let j=0; j<array2.length; j++) {
-
             if (array1[i] === array2[j]) matches.push(array1[i]);
         }
     }
-
     return matches;
 }
 
