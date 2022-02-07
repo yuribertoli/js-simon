@@ -12,6 +12,12 @@ let arrayNumbers = []; //creo un'array dove inserire i numeri random
 for (i=0; i<5; i++) {
 
     let numeroCasuale = randomNumber(0, 100);
+
+    //verifico che il numero non sia già presente tra i numeri random creati
+    if (arrayNumbers.includes(numeroCasuale)) {
+        numeroCasuale = randomNumber(0, 100);
+    }
+
     arrayNumbers.push(numeroCasuale);
     console.log(arrayNumbers);
 
