@@ -1,9 +1,10 @@
 //mi richiamo gli elementi del DOM da modificare
 const testo = document.getElementById("testo");
 const box = document.getElementById("box");
+const container = document.getElementsByTagName("div")[0];
 
 //Inserisco un timer di 3 secondi per far scomparire i numeri e passare alla fase 2
-setTimeout(domandaNumeri, 30000);
+setTimeout(domandaNumeri, 3000);
 
 //inizio gioco
 let arrayNumbers = []; //creo un'array dove inserire i numeri random
@@ -26,9 +27,7 @@ for (i=0; i<5; i++) {
 box.innerHTML = arrayNumbers.join(' - '); //uso join per separare meglio i numeri
 
 //Inserisco il testo dentro l'h1
-testo.innerHTML = "Osserva i seguenti numeri per 30 secondi";
-
-
+testo.innerHTML = "Osserva i seguenti numeri per 3 secondi";
 
 
 
@@ -61,6 +60,16 @@ function domandaNumeri() {
         //mostro poi i risultati sullo schermo
         testo.innerHTML = `Hai indovinato ${finalResult.length} numeri`;
         box.innerHTML = finalResult.join(' - ');
+
+        //Aggiungo un bottone per giocare di nuovo
+        const button = document.createElement("button");
+        button.textContent = "Gioca di nuovo";
+        container.append(button);
+        button.addEventListener("click",
+            function(){
+            button = window.location.reload();
+            }
+        )
 
     }, 1000);
 
